@@ -12,7 +12,7 @@ export default function Cadastro() {
       <Text style={styles.titulo}>Beleza Suave</Text>
       <Text style={styles.subtitulo}>Agendamento rápido, sem complicações.</Text>
 
-      <Text style={styles.label}>Nome:</Text>
+      <Text style={styles.label}>Nome</Text>
       <TextInput style={styles.input} />
 
       <Text style={styles.label}>Telefone:</Text>
