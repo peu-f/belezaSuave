@@ -1,1 +1,1 @@
-"// Estilos globais aqui" 
+// Estilos globais aqui
