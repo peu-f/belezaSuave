@@ -1,1 +1,1 @@
-"export default function Inicio() { return null; }" 
+export default function Inicio() { return null; }
