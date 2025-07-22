@@ -1,29 +1,30 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import { fonts } from '../styles/fonts';
-import { RootStackParamList } from '../@types/navigation';
-
-type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Login'>;
-
+import { colors } from '../styles/global';
+import InputField from '../components/Input';
+import Button from '../components/Button';
+import Title from '../components/Title';
+import Subtitle from '../components/Subtitle';
+import Conteiner from '../components/Conteiner';
+import { RootStackParamList } from '../@types/navigation'; // Ajuste o caminho se necessário
 export default function Login() {
-  const navigation = useNavigation<NavigationProps>();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Beleza Suave</Text>
-      <Text style={styles.subtitulo}>Agendamento rápido, sem complicações.</Text>
+    <Conteiner >
+      <Title />
+      <Subtitle texto="Faça login para continuar" />
 
-      <Text style={styles.label}>Email:</Text>
-      <TextInput style={styles.input} keyboardType="email-address" />
+      <InputField label="Email:" keyboardType="email-address" />
+      <InputField label="Senha:" secureTextEntry />
 
-      <Text style={styles.label}>Senha:</Text>
-      <TextInput style={styles.input} secureTextEntry />
-
-      <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.textoBotao}>Entrar</Text>
-      </TouchableOpacity>
+      <Button
+        botaoTexto="Entrar"
+        onPress={() => navigation.navigate('Home')}
+      />
 
       <Text style={styles.footer}>
         Ainda não tem uma conta?{' '}
@@ -31,58 +32,11 @@ export default function Login() {
           Cadastre-se
         </Text>
       </Text>
-    </View>
+    </Conteiner>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
-    padding: 24,
-    justifyContent: 'center',
-  },
-  titulo: {
-    fontFamily: fonts.pacifico,
-    fontSize: 32,
-    color: '#7B68EE',
-    textAlign: 'center',
-    marginBottom: 8,
-  },
-  subtitulo: {
-    fontFamily: fonts.poppinsRegular,
-    fontSize: 16,
-    color: '#333',
-    textAlign: 'center',
-    marginBottom: 32,
-  },
-  label: {
-    fontFamily: fonts.poppinsRegular,
-    fontSize: 14,
-    color: '#333',
-    marginBottom: 6,
-  },
-  input: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    marginBottom: 16,
-    fontFamily: fonts.poppinsRegular,
-    fontSize: 14,
-  },
-  botao: {
-    backgroundColor: '#7B68EE',
-    borderRadius: 8,
-    paddingVertical: 12,
-    alignItems: 'center',
-    marginTop: 8,
-  },
-  textoBotao: {
-    color: '#fff',
-    fontFamily: fonts.poppinsBold,
-    fontSize: 16,
-  },
   footer: {
     fontFamily: fonts.poppinsRegular,
     fontSize: 14,
@@ -91,7 +45,8 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   link: {
-    color: '#7B68EE',
+    color: colors.primary,
     fontFamily: fonts.poppinsBold,
   },
 });
+//Totalmente componentizado ajhjhsjahsdasdgasjhdg
