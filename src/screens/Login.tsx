@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import { fonts } from '../styles/fonts';
 import { colors } from '../styles/global';
-import InputField from '../components/Input';
 import Button from '../components/Button';
 import Title from '../components/Title';
 import Subtitle from '../components/Subtitle';
@@ -19,9 +18,9 @@ export default function Login() {
       <Title />
       <Subtitle texto="Faça login para continuar" />
 
-      <Input label="E-mail:" keyboardType="email-address" placeholder='Digite seu E-mail' style={{ width: 350 }}
+      <Input label="E-mail:" keyboardType="email-address" placeholder='Digite seu E-mail'
         textContentType="emailAddress" autoComplete="email" autoCapitalize="none" />
-      <Input label="Senha:" secureTextEntry  placeholder='Digite sua Senha' style={{ width: 350 }}
+      <Input label="Senha:" secureTextEntry  placeholder='Digite sua Senha' 
         textContentType="password" autoComplete="password" autoCapitalize="none"
       />
 

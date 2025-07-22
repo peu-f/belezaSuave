@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../@types/navigation'; // 👈 ajuste se seu path for diferente
+import { RootStackParamList } from '../@types/navigation';
 import { fonts } from '../styles/fonts'; 
 import { colors } from '../styles/global';
 import Conteiner from '../components/Conteiner'; 
@@ -13,7 +13,7 @@ import Button from '../components/Button';
 type NavigationProps = NativeStackNavigationProp<RootStackParamList, 'Inicio'>;
 
 export default function Inicio() {
-  const navigation = useNavigation<NavigationProps>();
+  const navigation = useNavigation<NavigationProps>(); //  tipagem da navegação
 
   return (
     <Conteiner >

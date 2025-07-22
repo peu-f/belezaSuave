@@ -14,6 +14,8 @@ import Login from './src/screens/Login'; // sua próxima tela
 import Home from './src/screens/Home'; // sua próxima tela
 import Cadastro from './src/screens/Cadastro';
 const Stack = createNativeStackNavigator();
+import { fonts } from './src/styles/fonts';
+import { colors } from './src/styles/global';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +29,17 @@ export default function App() {
   return (
     // Navegação
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Inicio">
+      <Stack.Navigator initialRouteName="Inicio" 
+      screenOptions={{
+    headerStyle: {
+      backgroundColor: colors.background, // muda o fundo da barra
+    },
+    headerTintColor: colors.text, // muda a cor dos ícones e do texto (como o título e o botão de voltar)
+    headerTitleStyle: {
+      fontFamily: fonts.poppinsBold, // se quiser uma fonte personalizada
+      fontSize: 20,
+    },
+  }}>
         <Stack.Screen name="Inicio" component={Inicio} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />

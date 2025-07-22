@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 60,
     borderRadius: 15,
     marginBottom: 30,
+    width: 350
     
   },
   textoBotao: {
