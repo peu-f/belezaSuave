@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, ViewStyle } from 'react-native';
-import {colors} from '../styles/global';
+import { colors } from '../styles/global';
 
 interface ContainerProps {
-  //O children é oq tem dentro do componente
   children: React.ReactNode;
+  style?: ViewStyle; // 👈 adicionando prop opcional de estilo
 }
 
-export default function Container({ children }: ContainerProps) {
-  return <View style={[styles.container]}>{children}</View>;
+export default function Container({ children, style }: ContainerProps) {
+  return <View style={[styles.container, style]}>{children}</View>; // 👈 combinando estilos
 }
 
 const styles = StyleSheet.create({
@@ -20,4 +20,3 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 });
-
